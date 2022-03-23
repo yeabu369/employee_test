@@ -61,7 +61,7 @@ function Homepage(): JSX.Element {
 
     await axios({
       url: 'api/todos/reOrder',
-      method: 'POST',
+      method: 'PUT',
       data: { items },
     })
   }
