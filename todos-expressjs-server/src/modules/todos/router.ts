@@ -19,7 +19,26 @@ router.post(
   }),
 );
 
-// TODO: Add routes for deleting and editing todos
 // Use route DELETE /:id for deletion amd PUT /:id for editing
+router.delete(
+  '/:id',
+  resultHandler(async (req: Request, res: Response) => {
+    return todosController.delete(req.params.id);
+  }),
+);
+
+router.put(
+  '/:id',
+  resultHandler(async (req: Request, res: Response) => {
+    return todosController.update(req.body, req.params.id);
+  }),
+);
+
+router.put(
+  '/reOrder',
+  resultHandler(async (req: Request, res: Response) => {
+    return todosController.reOrder(req.body)
+  }),
+);
 
 export default router;

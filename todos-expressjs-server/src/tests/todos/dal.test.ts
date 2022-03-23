@@ -59,4 +59,16 @@ describe('TodoDal Class Testing', () => {
 
     expect(todosDal.getOne(createdTodo._id)).toBeUndefined();
   });
+
+  test('Re-order Todo', async () => {
+  
+    let todos = todosDal.getAll();
+    const [reorderedItem] = todos.splice(0, 1)
+    todos.splice(2, 0, reorderedItem)
+
+
+    todosDal.changeOrder(todos);
+
+    expect(reorderedItem).toEqual(todos[2]);
+  });
 });

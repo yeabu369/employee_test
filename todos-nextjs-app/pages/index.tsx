@@ -50,7 +50,7 @@ function Homepage(): JSX.Element {
   const reloadList = () => setStatus('loading')
 
   // TODO: update new todos order on server
-  const handleOnDragEnd = (result) => {
+  const handleOnDragEnd = async (result) => {
     if (!result.destination) return
 
     const items = Array.from(todos)
@@ -58,6 +58,12 @@ function Homepage(): JSX.Element {
     items.splice(result.destination.index, 0, reorderedItem)
 
     setTodos(items)
+
+    await axios({
+      url: 'api/todos/reOrder',
+      method: 'POST',
+      data: { items },
+    })
   }
 
   return (

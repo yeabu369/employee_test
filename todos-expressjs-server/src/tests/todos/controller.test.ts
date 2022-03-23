@@ -53,4 +53,21 @@ describe('TodoController Class Testing', () => {
       todosController.todosDal.getOne(createdTodo.data._id),
     ).toBeUndefined();
   });
+
+  test('Reorder Todo', async () => {
+    const todo = {
+      text: 'Test todo',
+      completed: false,
+    };
+    
+    let items = Array.from(todosController.todosDal.getAll())
+    const [reorderedItem] = items.splice(0, 1)
+    items.splice(2, 0, reorderedItem)
+
+    todosController.reOrder(items);    
+
+    expect(
+      reorderedItem,
+    ).toEqual(items[2]);
+  });
 });

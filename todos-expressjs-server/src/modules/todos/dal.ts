@@ -43,6 +43,11 @@ export class TodosDal {
   delete(id: string) {
     _.remove(this.todosArray, { _id: id });
   }
+
+  changeOrder(payload: ITodoPayload[]) {
+    _.remove(this.todosArray)
+    return _.concat(payload);
+  }
 }
 
 export const todosDal = new TodosDal(todosArray);
