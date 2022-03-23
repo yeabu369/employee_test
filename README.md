@@ -60,14 +60,14 @@ in their respective folder
 
 ![alt text](https://github.com/goxvaetva101/employee_test/blob/master/tasks_to_complete.jpg)
 
-All tasks that are required to complete the task are marked with comments starting with TODO:
+All tasks you need to complete are marked with comments starting with TODO:
 You can use a vs code extension such as "Todo Tree" to highlight and make them easy to find
 
-For the "update new todos order on server" task you may need to write extra code on the server that has not been marked as TODO:, you are required to implement an endpoint for updating the todo items order, including its dal,controller and route.
+For the "update new todos order on server" task you may need to write extra code on the server that has not been marked as "TODO:", You are required to implement an endpoint for updating the todo items order including its dal,controller and route.
 
 ## Tests
 
-After completing the tasks make sure all tests on the server pass.
+After completing the tasks make sure all jest tests on the server pass.
 
 You can run tests by using
 
@@ -77,4 +77,4 @@ npm run test
 
 in the server folder
 
-you are also required to write tests for any new dals or controllers you might have to write.
+You are also required to write tests for any new dals or controllers you might have to write.
