@@ -44,7 +44,7 @@ export class TodosDal {
     _.remove(this.todosArray, { _id: id });
   }
 
-  changeOrder(payload: ITodoPayload[]) {
+  changeOrder(payload: Todo[]) {
     _.remove(this.todosArray)
     return _.concat(payload);
   }
